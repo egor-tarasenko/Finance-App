@@ -1,5 +1,26 @@
 <template>
-  <div class="btn btn-primary">
-    sdfsdfs <font-awesome-icon icon="file" />
+  <auth-index/>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+      </div>
+    </div>
   </div>
 </template>
+
+
+<script>
+
+import AuthIndex from "@/components/auth/AuthIndex.vue";
+
+export default {
+  components: {AuthIndex},
+  return() {
+
+  }
+}
+
+</script>
