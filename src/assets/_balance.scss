@@ -1,0 +1,25 @@
+.category-balance-box{
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #b2b2b2;
+  border-radius: 10px;
+  .home-stats{
+    text-align: center;
+    color: #616161;
+    font-weight: 300;
+    .income{
+      color: #E53935;
+      font-weight: 400;
+    }
+    .balance{
+      color: #00897B;
+      font-weight: 400;
+    }
+    .expanses{
+      font-weight: 400;
+    }
+  }
+}

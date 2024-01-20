@@ -1,0 +1,12 @@
+.month-toggler-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  .month-toggler{
+    text-align: center;
+    width: 90%;
+    display: flex;
+  }
+}

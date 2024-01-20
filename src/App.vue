@@ -1,11 +1,31 @@
 <template>
-  <auth-index/>
+  <auth-index v-if="!isAuthenticated"/>
 
+  <div class="container" v-if="isAuthenticated">
+    <div class="tool-bar">
+      <div class="row">
+        <div class="col content">
+          <history-index v-if="activePage === 'history'"></history-index>
+          <home-index v-if="activePage === 'home'"></home-index>
+          <settings-index v-if="activePage === 'settings'"></settings-index>
+        </div>
+      </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col">
+      <div class="row nav">
+        <div class="col nav-item" @click="activePage = 'history'" :class="{active: activePage === 'history'}">
+          <font-awesome-icon icon="bars"/>
+          <span>History</span>
+        </div>
 
+        <div class="col nav-item" @click="activePage = 'home'" :class="{active: activePage === 'home'}">
+          <font-awesome-icon icon="home"/>
+          <span>Home</span>
+        </div>
+
+        <div class="col nav-item" @click="activePage = 'settings'" :class="{active: activePage === 'settings'}">
+          <font-awesome-icon icon="gear"/>
+          <span>Settings</span>
+        </div>
       </div>
     </div>
   </div>
@@ -15,12 +35,26 @@
 <script>
 
 import AuthIndex from "@/components/auth/AuthIndex.vue";
+import HistoryIndex from "@/components/history/HistoryIndex.vue";
+import HomeIndex from "@/components/home/HomeIndex.vue";
+import SettingsIndex from "@/components/settings/SettingsIndex.vue";
 
 export default {
-  components: {AuthIndex},
-  return() {
+  components: {SettingsIndex, HomeIndex, HistoryIndex, AuthIndex},
+  data() {
+    return {
+      activePage: 'home'
+    };
+  },
+  methods: {
 
+  },
+  computed: {
+    isAuthenticated() {
+        return true
+    }
   }
 }
 
 </script>
+

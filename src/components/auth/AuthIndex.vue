@@ -1,9 +1,6 @@
 <template>
-  <h3>AuthIndex</h3>
-
-
-  <login/>
-  <register/>
+  <login v-if="activePage === 'login'" @goToRegister="activePage = 'register'"/>
+  <register v-if="activePage === 'register'" @goToLogin="activePage = 'login'"/>
 </template>
 
 <script>
@@ -13,11 +10,10 @@ import Register from "@/components/auth/Register.vue";
 
 export default {
   components: {Register, Login},
-  return(){}
-
+  data() {
+    return {
+      activePage: 'login'
+    }
+  }
 }
 </script>
-
-<style scoped>
-
-</style>

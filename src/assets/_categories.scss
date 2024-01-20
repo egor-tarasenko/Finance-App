@@ -1,0 +1,21 @@
+.category-balance {
+  display: inline-block;
+  width: calc(33.333% - 20px);
+  margin: 10px;
+  font-size: 12px;
+  text-align: center;
+  color: #616161;
+
+  .icon {
+    background-color: #C8E6C9;
+    border-radius: 50%;
+    padding: 10px 12px 10px 12px;
+    display: inline-block;
+  }
+
+  .balance {
+    color: #00897B;
+    font-size: 14px;
+  }
+}
+

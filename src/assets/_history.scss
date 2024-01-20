@@ -1,0 +1,43 @@
+.history{
+  border: 1px solid #E0E0E0;
+  padding: 5px;
+  .history-inf{
+    padding: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #424242;
+  }
+  .history-item{
+    padding: 5px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    #flex{
+      display: flex;
+      align-items: center;
+    }
+    .logo{
+      background-color: #c788d3;
+      border-radius: 50%;
+      padding: 10px 12px 10px 12px;
+    }
+    .items-name{
+      margin-left: 10px;
+      h5{
+        font-size: 16px;
+        margin-bottom: -8px;
+        color: #212121;
+      }
+      span{
+        font-size: 13px;
+        color: #424242;
+      }
+    }
+    .sum{
+      color: #E53935;
+    }
+  }
+}
