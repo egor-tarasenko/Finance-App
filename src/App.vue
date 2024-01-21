@@ -54,8 +54,11 @@ export default {
   computed: {
     ...mapStores(useAccountStore),
     isAuthenticated() {
-      return this.accountStore.isAuthenticated()
+        return this.accountStore.isAuthenticated
     }
+  },
+  created() {
+    this.accountStore.fetchMyAccount()
   }
 }
 
