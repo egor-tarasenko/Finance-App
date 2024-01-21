@@ -7,7 +7,6 @@
 @import "_categories.scss";
 @import "_history.scss";
 @import "_settings.scss";
-@import "_modalWindow.scss";
 
 body{
     font-family: Inter, serif;

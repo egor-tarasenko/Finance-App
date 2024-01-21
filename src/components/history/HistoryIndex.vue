@@ -2,8 +2,6 @@
   <headerComponent/>
   <calendar/>
   <category-balance/>
-  <modal-window/>
-
   <div class="history">
     <div class="history-inf">
       <div class="history-data">DEC, 12 TH</div>
@@ -56,10 +54,8 @@
 import calendar from "@/components/widjest/calendar.vue";
 import headerComponent from "@/components/widjest/headerComponent.vue";
 import CategoryBalance from "@/components/widjest/categoryBalance.vue";
-import ModalWindow from "@/components/widjest/modalWindow.vue";
-
 export default {
-  components: {ModalWindow, CategoryBalance, calendar, headerComponent},
+  components: {CategoryBalance, calendar, headerComponent},
   return() {
 
   }
