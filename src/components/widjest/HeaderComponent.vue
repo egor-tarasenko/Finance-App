@@ -6,15 +6,23 @@
     </div>
     <div class="header-nav">
       <div class="icon"><font-awesome-icon icon="search"/></div>
-      <div class="avatar"><font-awesome-icon icon="person"/></div>
+      <div class="avatar">{{accountStore.account.name.slice(0, 1)}}</div>
     </div>
   </header>
 </template>
 
 <script>
-export default {
-  return(){
 
+import {mapStores} from "pinia";
+import {useAccountStore} from "@/stores/account.js";
+
+export default {
+  data(){
+    return {}
+
+  },
+  computed: {
+    ...mapStores(useAccountStore)
   }
 }
 </script>

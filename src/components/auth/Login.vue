@@ -10,10 +10,11 @@
           <h3>Login</h3>
         </div>
         <div class="form">
-          <input type="text" placeholder="Email">
-          <input type="text" placeholder="Password">
+          <input type="text" placeholder="Email" v-model.trim="loginData.email">
+          <input type="password" placeholder="Password" v-model.trim="loginData.password">
+          <small class="text-danger">{{ formatErrors(errors.email) }}</small>
           <div>
-            <button class="btn">Sign In</button>
+            <button class="btn" @click="login">Sign In</button>
           </div>
         </div>
         <div class="another-entrance">
@@ -26,14 +27,43 @@
 </template>
 
 <script>
-export default {
-  return() {
 
+import {mapStores} from "pinia";
+import {useAccountStore} from "@/stores/account.js";
+
+export default {
+  data() {
+    return {
+      loginData: {
+        email: 'Egor@gmail.com',
+        password: '12345678',
+      },
+      errors: {}
+    }
   },
   methods: {
-    goToRegister(){
+    login() {
+      axios.post(`/login`, this.loginData).then((response) => {
+        this.accountStore.fetchMyAccount()
+      }).catch((error) => {
+        if (error.response) {
+          this.errors = error.response.data.errors
+        }
+      })
+    },
+    goToRegister() {
       this.$emit('goToRegister')
-    }
+    },
+    formatErrors(errorArray) {
+      if (Array.isArray(errorArray)) {
+        return errorArray.join(' ')
+      } else {
+        return '';
+      }
+    },
+  },
+  computed: {
+    ...mapStores(useAccountStore)
   }
 }
 </script>
