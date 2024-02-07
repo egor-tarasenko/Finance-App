@@ -14,7 +14,7 @@
     <div class="balance" :style="{ color: categoryColor(category) }">500</div>
   </div>
 
-  <transaction-form/>
+  <transaction-form :showDeleteButton="false" :showAddButton="true"/>
 </template>
 <script>
 
@@ -53,14 +53,18 @@ export default {
       return ''
     },
     addTransactionToCategory(category) {
-      this.transactionStore.formTransaction.category_id = category.id
-      this.transactionStore.formTransaction.type = category.type
-
+      this.transactionStore.formTransaction = {
+        category_id: category.id,
+        type: category.type
+      }
       this.transactionStore.showForm = true
     }
   },
   created() {
     this.categoriesStore.fetchCategories()
+    this.transactionStore.fetchTransactions()
   }
 }
 </script>
+<style scoped>
+</style>

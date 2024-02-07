@@ -20,6 +20,9 @@ export const useCategoriesStore = defineStore('categories', {
             }).catch(() => {
                 console.log('error')
             })
+        },
+        getCategory(categoryId){
+            return this.categories.find((item) => item.id === categoryId)
         }
     }
 })
